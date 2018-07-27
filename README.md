@@ -6,8 +6,6 @@ The purpose would be to help a beginner to look at a basic python tensorflow imp
 
 
 ## Requirements:
-<li>
-  <ol>TensorFlow</ol>
-  <ol>Matplotlib</ol>
-  <ol>Numpy</ol>
-</li>  
+ - TensorFlow
+ - Matplotlib
+ - Numpy
