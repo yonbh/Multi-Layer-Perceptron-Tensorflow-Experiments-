@@ -32,9 +32,9 @@ class expFFNN:
         # go through batches of 100 images and feed them into the network at a time batches by batches
         self.batch_size = 100
 		
-		# placeholders are just some place at any given time for some data to be shoved through the network
-		# matrix = height x width
-		# height = none, width is 784 as flattened out the 28x28
+	# placeholders are just some place at any given time for some data to be shoved through the network
+	# matrix = height x width
+	# height = none, width is 784 as flattened out the 28x28
         self.x = tf.placeholder('float', ([None, 784]))
         self.y = tf.placeholder('float')
 
