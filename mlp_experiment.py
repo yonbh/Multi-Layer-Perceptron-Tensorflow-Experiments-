@@ -69,7 +69,7 @@ class expFFNN:
         
     # Modelling the network    
     def neural_network_model(self, data):
-		# using dictionary to define the shape of the hidden layers and shape of weights in line with the hidden layer
+	# using dictionary to define the shape of the hidden layers and shape of weights in line with the hidden layer
         h1Layer = {'weights':self.h1Weights,
                    'biases':self.h1Biases}
 
@@ -85,7 +85,7 @@ class expFFNN:
         outputLayer = {'weights':self.outWeights,
                    'biases':self.outBiases}
 		
-		# relu is like your threshold function
+	# relu is like your threshold function
         layer1 = tf.add(tf.matmul(data, h1Layer['weights']), h1Layer['biases']) 
         layer1 = tf.nn.relu(layer1)
 
@@ -104,7 +104,7 @@ class expFFNN:
     
     
     # Training the network
-	# x as input data
+    # x as input data
     def trainNeuralNetwork(self, x):
         y = self.y
         prediction = self.neural_network_model(x)
@@ -210,7 +210,7 @@ class expFFNN:
             self.accRec.append(accuracy.eval({self.x:mnist.test.images, y:mnist.test.labels})*100)
  
  
-	# Shuffling weights of a layer node by node
+    # Shuffling weights of a layer node by node
     def shuffleWeights(self, layer, nNodesRdm):
 
         for n in range(0,nNodesRdm):
@@ -221,7 +221,7 @@ class expFFNN:
             self.nnPre(self.x)
  
  
-	# Randomising weights of a layer node by node with predefined means and standard deviations (truncated)
+    # Randomising weights of a layer node by node with predefined means and standard deviations (truncated)
     def randomiseWeights(self, layer, nNodesRdm):
         for n in range(0,nNodesRdm):
             # using len() as a form of validation check
@@ -232,7 +232,7 @@ class expFFNN:
             print("---------------------------------")
  
  
-	# Randomising weights of a layer node by node using default means and std deviation 
+    # Randomising weights of a layer node by node using default means and std deviation 
     def randomiseWeights2(self, layer, nNodesRdm):
         for n in range(0,nNodesRdm):
             # using len() as a form of validation check
@@ -244,7 +244,7 @@ class expFFNN:
 
 			
     # Sequentially randomise a node and revert it back to previous values when moving on to the next node
-	# The purpose of this method is to potentially identify in which portion of a layer would be more impact if manipulated
+    # The purpose of this method is to potentially identify in which portion of a layer would be more impact if manipulated
     def rdRevertWeights(self, layer, nNodesRdm):
         # to remember the orginal weight values for reverting purposes
         # need to use np.copy or else the memory reference will be same and changing one will affect the other as well
@@ -318,7 +318,7 @@ class expFFNN:
             self.accLossRec.append(accuracy.eval({self.x:mnist.test.images, y:mnist.test.labels})*100)
     
 	
-	# Generate a dictionary which maps node manipulated progress and performance after that specific manipulation
+    # Generate a dictionary which maps node manipulated progress and performance after that specific manipulation
     def generateAccDict(self, numNodes, recordList):
         acc = recordList
         nodes = range(1,numNodes+1)
