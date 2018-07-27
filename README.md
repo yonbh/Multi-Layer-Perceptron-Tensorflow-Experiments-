@@ -7,5 +7,5 @@ The purpose would be to help a beginner to look at a basic python tensorflow imp
 
 ## Requirements:
  - TensorFlow
+ - Numpy 
  - Matplotlib
- - Numpy
